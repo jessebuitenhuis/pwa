@@ -4,8 +4,8 @@
   "scripts": {
     "ng": "ng",
     "serve": "ng serve",
-    "start": "http-server -p 8080 dist/pwa",
-    "build": "ng build --prod",
+    "start": "node server.js",
+    "build": "ng build",
     "test": "ng test",
     "lint": "ng lint",
     "e2e": "ng e2e"
@@ -23,7 +23,7 @@
     "@angular/router": "~10.1.5",
     "@angular/service-worker": "~10.1.5",
     "firebase": "^7.23.0",
-    "http-server": "^0.12.3",
+    "express": "^4.17.1",
     "rxjs": "~6.6.0",
     "tslib": "^2.0.0",
     "zone.js": "~0.10.2"
