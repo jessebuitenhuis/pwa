@@ -1,5 +1,6 @@
 import { Component } from '@angular/core';
 import { SwUpdate } from '@angular/service-worker';
+import { PushNotificationsService } from './push-notifications/push-notifications.service';
 
 @Component({
   selector: 'app-root',
@@ -9,17 +10,7 @@ import { SwUpdate } from '@angular/service-worker';
 export class AppComponent {
   title = 'pwa';
 
-  constructor(swUpdate: SwUpdate) {
-    swUpdate.available.subscribe((event) => {
-      alert(
-        `Version ${event.available} available. Current is ${event.current}`
-      );
-    });
-
-    swUpdate.activated.subscribe((event) => {
-      alert(
-        `Version ${event.current} activated. Previous was ${event.previous}`
-      );
-    });
+  constructor(pushNotificationsService: PushNotificationsService) {
+    pushNotificationsService.init();
   }
 }
