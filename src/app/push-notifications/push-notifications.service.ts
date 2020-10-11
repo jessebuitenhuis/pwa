@@ -1,7 +1,7 @@
 import { Injectable } from '@angular/core';
+import { AngularFireDatabase } from '@angular/fire/database';
 import { AngularFirestore, DocumentReference } from '@angular/fire/firestore';
 import { SwPush, SwUpdate } from '@angular/service-worker';
-import { Observable } from 'rxjs';
 import { environment } from 'src/environments/environment';
 
 @Injectable({
