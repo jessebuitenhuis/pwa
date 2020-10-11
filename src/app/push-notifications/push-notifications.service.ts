@@ -45,6 +45,6 @@ export class PushNotificationsService {
 
   private _saveSubscription(sub: PushSubscription): Promise<DocumentReference> {
     debugger;
-    return this.pushSubscriptions.add(sub);
+    return this.pushSubscriptions.add(sub.toJSON());
   }
 }
