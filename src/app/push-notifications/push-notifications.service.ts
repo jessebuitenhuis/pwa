@@ -36,17 +36,15 @@ export class PushNotificationsService {
   }
 
   private async _subscribeToNotifications(): Promise<void> {
-    try {
-      const sub = await this._swPush.requestSubscription({
-        serverPublicKey: environment.VAPID.publicKey,
-      });
-      this._saveSubscription(sub);
-    } catch {
-      console.error('Could not subscribe to notifications.');
-    }
+    const sub = await this._swPush.requestSubscription({
+      serverPublicKey: environment.VAPID.publicKey,
+    });
+
+    this._saveSubscription(sub);
   }
 
   private _saveSubscription(sub: PushSubscription): Promise<DocumentReference> {
+    debugger;
     return this.pushSubscriptions.add(sub);
   }
 }
